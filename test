@@ -1,0 +1,42 @@
+prompts:
+  blog_post_writer:
+    name: Blog Post Writer
+    description: Creates full blog posts
+    model: gpt-4
+    temperature: 0.7
+    system_message: You are an expert blog writer who creates engaging, SEO-friendly content.
+    user_message: |
+      Write a blog post about {{topic}}
+      Target audience: {{audience}}
+      Tone: {{tone}}
+      Length: {{word_count}} words
+  
+  headline_generator:
+    name: Blog Headline Generator
+    description: Creates catchy headlines
+    model: gpt-4
+    temperature: 0.9
+    system_message: You are a headline specialist who creates compelling, click-worthy titles.
+    user_message: |
+      Generate 5 headlines for a blog post about: {{topic}}
+      Target audience: {{audience}}
+  
+  meta_description:
+    name: Meta Description Writer
+    description: Creates SEO meta descriptions
+    model: gpt-3.5-turbo
+    temperature: 0.3
+    system_message: You write concise, compelling meta descriptions under 160 characters.
+    user_message: |
+      Write a meta description for: {{blog_title}}
+      Keywords: {{keywords}}
+  
+  social_media_post:
+    name: Social Media Post Creator
+    description: Creates social posts for blog promotion
+    model: gpt-4
+    temperature: 0.8
+    system_message: You create engaging social media posts that drive traffic.
+    user_message: |
+      Create a {{platform}} post for: {{blog_title}}
+      Link: {{blog_url}}
