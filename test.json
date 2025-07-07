@@ -1,66 +1,30 @@
-[
-  {
-    "id": "blog_post_writer",
-    "name": "Blog Post Writer",
-    "description": "Creates full blog posts with SEO optimization",
-    "model": "gpt-4",
-    "temperature": 0.7,
-    "max_tokens": 2000,
-    "system_message": "You are an expert blog writer who creates engaging, SEO-friendly content. You understand content marketing, user engagement, and write in a clear, compelling style.",
-    "user_message": "Write a comprehensive blog post about {{topic}}.\n\nTarget audience: {{audience}}\nTone: {{tone}}\nLength: {{word_count}} words\n\nInclude:\n- An engaging introduction\n- Well-structured sections with headers\n- Practical examples or tips\n- A compelling conclusion with a call-to-action",
-    "variables": {
-      "topic": "The topic to write about",
-      "audience": "Target audience for the blog",
-      "tone": "Writing tone (professional, casual, friendly, etc.)",
-      "word_count": "Desired word count"
+{
+  "version": "1.0",
+  "updated": "2024-01-15",
+  "prompts": {
+    "blog_post_writer": {
+      "name": "Blog Post Writer",
+      "description": "Creates full blog posts",
+      "model": "gpt-4",
+      "temperature": 0.7,
+      "system_message": "You are an expert blog writer who creates engaging, SEO-friendly content.",
+      "user_message": "Write a blog post about {{topic}}\nTarget audience: {{audience}}\nTone: {{tone}}\nLength: {{word_count}} words"
     },
-    "example_values": {
-      "topic": "Remote Work Best Practices",
-      "audience": "HR managers and team leaders",
-      "tone": "Professional yet approachable",
-      "word_count": "1000"
-    }
-  },
-  {
-    "id": "blog_headline_generator",
-    "name": "Blog Headline Generator",
-    "description": "Creates multiple catchy headlines for blog posts",
-    "model": "gpt-4",
-    "temperature": 0.9,
-    "max_tokens": 500,
-    "system_message": "You are a headline specialist who creates compelling, click-worthy titles that drive engagement while remaining honest and accurate. You understand SEO, emotional triggers, and reader psychology.",
-    "user_message": "Generate 10 different headlines for a blog post about {{topic}}.\n\nTarget audience: {{audience}}\nStyle: {{style}}\n\nProvide a mix of:\n- How-to headlines\n- Numbered list headlines\n- Question headlines\n- Benefit-driven headlines\n- Controversial or thought-provoking headlines",
-    "variables": {
-      "topic": "The blog post topic",
-      "audience": "Target audience",
-      "style": "Headline style preference"
+    "headline_generator": {
+      "name": "Blog Headline Generator",
+      "description": "Creates catchy headlines",
+      "model": "gpt-4",
+      "temperature": 0.9,
+      "system_message": "You are a headline specialist who creates compelling, click-worthy titles.",
+      "user_message": "Generate 5 headlines for a blog post about: {{topic}}\nTarget audience: {{audience}}"
     },
-    "example_values": {
-      "topic": "AI in Healthcare",
-      "audience": "Healthcare professionals",
-      "style": "Professional but attention-grabbing"
-    }
-  },
-  {
-    "id": "blog_outline_creator",
-    "name": "Blog Outline Creator",
-    "description": "Creates detailed outlines for blog posts",
-    "model": "gpt-3.5-turbo",
-    "temperature": 0.5,
-    "max_tokens": 1000,
-    "system_message": "You are a content strategist who creates comprehensive blog outlines that ensure logical flow, complete coverage of topics, and engaging structure.",
-    "user_message": "Create a detailed outline for a blog post about {{topic}}.\n\nTarget audience: {{audience}}\nContent goals: {{goals}}\nLength: {{word_count}} words\n\nInclude:\n- Main sections with H2 headers\n- Subsections with H3 headers where appropriate\n- Key points to cover in each section\n- Suggested examples or data points\n- Internal and external linking opportunities",
-    "variables": {
-      "topic": "The blog post topic",
-      "audience": "Target audience",
-      "goals": "What the content should achieve",
-      "word_count": "Target word count"
-    },
-    "example_values": {
-      "topic": "Sustainable Business Practices",
-      "audience": "Small business owners",
-      "goals": "Educate and inspire action",
-      "word_count": "1500"
+    "meta_description": {
+      "name": "Meta Description Writer",
+      "description": "Creates SEO meta descriptions",
+      "model": "gpt-3.5-turbo",
+      "temperature": 0.3,
+      "system_message": "You write concise, compelling meta descriptions under 160 characters.",
+      "user_message": "Write a meta description for: {{blog_title}}\nKeywords: {{keywords}}"
     }
   }
-]
+}
